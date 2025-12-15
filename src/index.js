@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import authRoutes from "./routes/authRoutes.js";
+import favoriteRoutes from "./routes/favoriteRoutes.js";
 
 import { connectDB } from "./config/db.js";
 
@@ -16,7 +17,7 @@ connectDB();
 
 // TODO Routes
 app.use("/api/auth", authRoutes);
-// app.use("api/favorites", favoritesRoutes);
+app.use("api/favorites", favoritesRoutes);
 
 app.get("/", (req, res) => {
   res.send("Backend server is running");
