@@ -1,4 +1,4 @@
-import Favorite from "../models/Favorite";
+import Favorite from "../models/Favorite.js";
 
 export const addFavorite = async (req, res) => {
   try {
@@ -49,7 +49,7 @@ export const removeFavorite = async (req, res) => {
   }
 };
 
-export const getFavorites = async (req, res) => {
+export const getFavorite = async (req, res) => {
   try {
     const favorites = await Favorite.find({ userId: req.userId });
 
