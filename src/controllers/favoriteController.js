@@ -3,7 +3,6 @@ import Favorite from "../models/Favorite.js";
 export const addFavorite = async (req, res) => {
   try {
     const { gameId, name, background_image, rating, released } = req.body;
-    console.log("BODY RECIEVED:", req.body);
 
     if (!gameId) {
       return res.status(400).json({ message: "valid gameId is required" });
